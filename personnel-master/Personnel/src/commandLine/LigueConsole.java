@@ -7,10 +7,7 @@ import java.util.ArrayList;
 import commandLineMenus.List;
 import commandLineMenus.Menu;
 import commandLineMenus.Option;
-//Ceci importe la classe Scanner du package java.util
-import java.util.Scanner;
-//Ceci importe toutes les classes du package java.util
-import java.util.*;
+
 
 import personnel.*;
 
@@ -30,7 +27,7 @@ public class LigueConsole
 		Menu menu = new Menu("Gérer les ligues", "l");
 		menu.add(afficherLigues());
 		menu.add(ajouterLigue());
-		//menu.add(selectionnerLigue());
+		menu.add(selectionnerLigue());
 		menu.addBack("q");
 		return menu;
 	}
@@ -110,9 +107,14 @@ public class LigueConsole
 			);
 		}
 
+
+
+
+
 		private Menu gererEmployes (Ligue ligue)
 		{
 			Menu menu = new Menu("Gérer les employés de " + ligue.getNom(), "e");
+			menu.add(selectionnerEmploye(ligue));
 			menu.add(afficherEmployes(ligue));
 			menu.add(ajouterEmploye(ligue));
 			menu.add(modifierEmploye(ligue));
@@ -121,7 +123,16 @@ public class LigueConsole
 			return menu;
 		}
 
-		private List<Employe> supprimerEmploye ( final Ligue ligue)
+	private List<Employe> selectionnerEmploye {
+		return new List<>("Sélectionnez l'employe", "y",
+				() -> new ArrayList<>(ligue.getEmployes()),
+				(element) -> editerEmploye(element)
+		);
+	}
+
+
+
+	private List<Employe> supprimerEmploye ( final Ligue ligue)
 		{
 			return new List<>("Supprimer un employé", "s",
 					() -> new ArrayList<>(ligue.getEmployes()),

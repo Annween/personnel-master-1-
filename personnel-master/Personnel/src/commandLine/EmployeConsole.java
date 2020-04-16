@@ -18,7 +18,6 @@ public class EmployeConsole
 	{
 
 		Menu menu = new Menu("Gérer le compte " + employe.getNom(), "c");
-		menu.add(selectionnerEmploye());
 		menu.add(afficher(employe));
 		menu.add(changerNom(employe));
 		menu.add(changerPrenom(employe));
@@ -28,12 +27,6 @@ public class EmployeConsole
 		return menu;
 	}
 
-	private List<Employe> selectionnerEmploye() {
-		return new List<Ligue>("Sélectionnez l'employe que vous voulez éditer", "s",
-				() -> new ArrayList<>(gestionPersonnel.getEmployee()),
-				(element) -> editerEmploye(element)
-		);
-	}
 
 
 	private Option changerNom(final Employe employe)
