@@ -16,7 +16,7 @@ public class LigueConsole
 	private GestionPersonnel gestionPersonnel;
 	private EmployeConsole employeConsole;
 
-	public LigueConsole(GestionPersonnel gestionPersonnel, EmployeConsole employeConsole)
+	public LigueConsole(personnel.GestionPersonnel gestionPersonnel, commandLine.EmployeConsole employeConsole)
 	{
 		this.gestionPersonnel = gestionPersonnel;
 		this.employeConsole = employeConsole;

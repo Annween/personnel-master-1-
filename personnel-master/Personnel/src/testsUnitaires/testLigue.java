@@ -9,10 +9,10 @@ import personnel.*;
 
 class testLigue 
 {
-	GestionPersonnel gestionPersonnel = GestionPersonnel.getGestionPersonnel();
+	GestionPersonnel gestionPersonnel = personnel.GestionPersonnel.getGestionPersonnel();
 	
 	@Test
-	void createLigue() throws SauvegardeImpossible
+	void createLigue() throws personnel.SauvegardeImpossible
 	{
 		Ligue ligue = gestionPersonnel.addLigue("Fléchettes");
 		assertEquals("Fléchettes", ligue.getNom());
